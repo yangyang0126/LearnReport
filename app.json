@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/all/all",
+    "pages/art/art"
+
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "学习报告",
+    "navigationBarTextStyle":"black"
+  },
+  
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#31778E",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "2020",
+      "iconPath": "img/poll_dark.png",
+      "selectedIconPath": "img/poll.png"
+    },{
+      "pagePath": "pages/all/all",
+      "text": "ALL",
+      "iconPath": "img/date_input_dark.png",
+      "selectedIconPath": "img/date_input.png"
+    },{
+      "pagePath": "pages/art/art",
+      "text": "Art",
+      "iconPath": "img/brand_dark.png",
+      "selectedIconPath": "img/brand.png"
+    }]
+  },
+
+  "sitemapLocation": "sitemap.json"
+}

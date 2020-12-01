@@ -1,0 +1,16 @@
+.page{
+  background-color: #333333;
+}
+
+.title{
+  font-size: 38px;
+  font-weight: bold;
+  margin-left: 5px;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  color: white;
+}
+
+.img{
+  margin-left: 8px;     
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-circle": "@vant/weapp/circle",
+    "van-progress": "@vant/weapp/progress",
+    "van-divider": "@vant/weapp/divider"
+  }
+}

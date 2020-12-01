@@ -1,0 +1,80 @@
+<swiper style="height:{{height}}px">
+  <swiper-item>
+    <scroll-view scroll-y="true" style="width:{{width}}px;height:{{height}}px">
+      <!-- <view class="title">
+        <text>ALL</text>
+      </view> -->
+      <view class="progress">
+        <view class="title-small">
+          <text>英语</text>
+        </view>
+        <view class="progress-part" wx:for="{{English}}" wx:key="item">
+          <view class="progress-title">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="progress-list">
+            <van-progress percentage="{{item.percent}}" color="#BD3649" stroke-width="20" pivot-text="{{item.text}}" />
+          </view>
+        </view>
+        <view class="title-2">
+          <text>数据始于2018年4月，数据来源：扇贝、51Talk</text>
+        </view>
+        <view class="progress-divider">
+          <van-divider dashed customStyle="border-color: #B2B2B2"></van-divider>
+        </view>
+        <view class="title-small">
+          <text>生活</text>
+        </view>
+        <view class="progress-part" wx:for="{{Art}}" wx:key="item">
+          <view class="progress-title">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="progress-list">
+            <van-progress percentage="{{item.percent}}" color="#31778E" stroke-width="20" pivot-text="{{item.text}}" />
+          </view>
+        </view>
+        <view class="title-2">
+          <text>数据始于2020年8月，数据来源：自己记录</text>
+        </view>
+        <view class="progress-divider">
+          <van-divider dashed customStyle="border-color: #B2B2B2"></van-divider>
+        </view>
+        <view class="title-small">
+          <text>阅读</text>
+        </view>
+        <view class="progress-part" wx:for="{{Read}}" wx:key="item">
+          <view class="progress-title">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="progress-list">
+            <van-progress percentage="{{item.percent}}" color="#6A868F" stroke-width="20" pivot-text="{{item.text}}" />
+          </view>
+        </view>
+        <view class="title-2">
+          <text>数据始于2018年10月，数据来源：微信读书</text>
+        </view>
+        <view class="progress-divider">
+          <van-divider dashed customStyle="border-color: #B2B2B2"></van-divider>
+        </view>
+        <view class="title-small">
+          <text>运动</text>
+        </view>
+        <view class="progress-part" wx:for="{{Sport}}" wx:key="item">
+          <view class="progress-title">
+            <text>{{item.name}}</text>
+          </view>
+          <view class="progress-list">
+            <van-progress percentage="{{item.percent}}" color="#D66E49" stroke-width="20" pivot-text="{{item.text}}" />
+          </view>
+        </view>
+        <view class="title-2">
+          <text>数据始于2018年4月，数据来源：KEEP</text>
+        </view>
+        <view class="progress-divider">
+          <van-divider dashed customStyle="border-color: #fff"></van-divider>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+
+</swiper>
