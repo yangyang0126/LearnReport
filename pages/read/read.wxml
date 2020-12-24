@@ -1,0 +1,16 @@
+<view class="page">
+  <view class="page-title">
+    <view class="title">
+      <text>Read</text>
+    </view>
+  </view>
+
+  <view>
+    <van-cell is-link value="进入读书详情页" link-type="navigateTo" url="/pages/read2020/read2020" />
+  </view>
+
+  <view class="part-img">
+    <image wx:for="{{read}}" wx:key="item" mode='aspectFill' src="{{item.img}}" class="img"></image>
+  </view>
+
+</view>

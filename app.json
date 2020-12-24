@@ -1,10 +1,13 @@
 {
-  "pages":[
+  "pages":[    
     "pages/index/index",
     "pages/all/all",
-    "pages/art/art"
-
+    "pages/art/art",
+    "pages/read/read",
+    "pages/year/year",
+    "pages/read2020/read2020"  
   ],
+
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
@@ -17,7 +20,7 @@
     "selectedColor": "#31778E",
     "list": [{
       "pagePath": "pages/index/index",
-      "text": "2020",
+      "text": "2021",
       "iconPath": "img/poll_dark.png",
       "selectedIconPath": "img/poll.png"
     },{
@@ -25,6 +28,11 @@
       "text": "ALL",
       "iconPath": "img/date_input_dark.png",
       "selectedIconPath": "img/date_input.png"
+    },{
+      "pagePath": "pages/read/read",
+      "text": "Read",
+      "iconPath": "img/book.png",
+      "selectedIconPath": "img/book-b.png"
     },{
       "pagePath": "pages/art/art",
       "text": "Art",

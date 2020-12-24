@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-rate": "@vant/weapp/rate",
+    "van-divider": "@vant/weapp/divider",
+    "van-tag": "@vant/weapp/tag"
+  },
+  "enablePullDownRefresh": true
+}

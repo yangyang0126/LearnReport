@@ -1,4 +1,9 @@
 // pages/index/index.js
+wx.cloud.init()
+const db = wx.cloud.database(); // 初始化数据库
+const util = require('../../utils/util.js')  // 控制倒计时
+
+
 Page({
 
   /**
@@ -10,54 +15,65 @@ Page({
     widthImg:0,
     heightImg:0,
 
-    name:"赵静怡",
-    spell:"Zhao Jingyi",
-    job:"脉冲序列工程师",
-    exp:"3年工作经验",
-    tel:"139****1139",
-    nickname:"洋阳",
-    address:"上海",
-    birth:"1992-01-26",
-    email:"zhaojingyi0126@163.com",
+    Code:[],
+    Language:[],    
+    Art:[],
+    Sport:[],
 
-
-
-    Code:[
-      {name:"C++",percent:10,text:"0H"},
-      {name:"Matlab",percent:10,text:"0H"},
-      {name:"Python",percent:10,text:"0H"},   
-      {name:"Wechat",percent:100,text:"8H"},
-      {name:"SQL",percent:75.59,text:"6H"},        
-    ],
-    English:[
-      {name:"单词",percent:70.55,text:"70.55H"},
-      {name:"阅读",percent:20.9,text:"20.9H"},
-      {name:"听力",percent:14,text:"9.7H"},   
-      {name:"口语",percent:89.5,text:"89.5H"},    
-    ],
-    Skill:[
-      {name:"PPT",percent:42,text:"1H"},
-      {name:"摄影",percent:100,text:"3H"},   
-    ],
-    Art:[
-      {name:"绘画",percent:18/52*100,text:"18张"},
-      {name:"练字",percent:60/180*100,text:"60天"},
-      {name:"阅读",percent:100,text:"216H"},   
-    ],
-    Sport:[
-      {name:"跑步",percent:80,text:"80km"},
-      {name:"运动",percent:67.55,text:"67.55H"},     
-    ],
-    
+    datetimeTo: "2022/1/1 00:00:00 GMT+0800", // 开始时间
+    timeLeft: "",   // 剩下的时间（天时分秒）
+    time:"",
+    timeData: {},
+  
   },
 
 
+  onChange(event) {
+    console.log(event.detail);
+    this.setData({
+      hand1:event.detail,
+      
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
 
+    var _this = this;   
+    db.collection('codeYear').get({      
+      success: res => {
+        //console.log(res.data)            
+        this.setData({
+          Code: res.data
+        })
+      }
+    })
+    db.collection('languageYear').get({      
+      success: res => {
+        //console.log(res.data)            
+        this.setData({
+          Language: res.data
+        })
+      }
+    })
+    db.collection('artYear').get({      
+      success: res => {
+        //console.log(res.data)            
+        this.setData({
+          Art: res.data
+        })
+      }
+    })
+    db.collection('sportYear').get({      
+      success: res => {
+        //console.log(res.data)            
+        this.setData({
+          Sport: res.data
+        })
+      }
+    })
   },
 
   /**
@@ -81,8 +97,23 @@ Page({
       widthImg:width/3.3,
       heightImg:height/3.3
     }) 
+
+    // 计算倒计时
+    this.data.timer = setInterval(() =>{ 
+      this.setData({
+        timeLeft: util.getTimeLeft(this.data.datetimeTo)
+      });
+      
+
+    }, 1000);
   },
 
+  onChange(e) {
+    this.setData({
+      timeData: e.detail,
+    });
+  },
+  
   /**
    * 生命周期函数--监听页面隐藏
    */

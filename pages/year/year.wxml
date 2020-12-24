@@ -1,20 +1,13 @@
-<swiper style="height:{{height}}px"> 
+<!--pages/year/year.wxml-->
+<swiper style="height:{{height}}px">
   <swiper-item>
     <scroll-view scroll-y="true" style="width:{{width}}px;height:{{height}}px">
       <!-- <view class="title">
         <text>2020</text>
-      </view> -->
-      <view class='countDown'>
-        <van-tag type="warning" size="large">2021</van-tag>
-        <text class="countDown-text"> </text>
-        <van-count-down class="countDown-time" time="{{timeLeft}}" format="DD 天 HH 时 mm 分 ss 秒" />
-      </view>
-      <view class="progress-divider">
-        <van-divider dashed customStyle="border-color: #B2B2B2"></van-divider>
-      </view>
+      </view> -->      
 
       <view class="progress">
-
+        
         <view class="progress-part" wx:for="{{Code}}" wx:key="item">
           <view class="progress-title">
             <text>{{item.name}}</text>
@@ -29,8 +22,8 @@
         <view class="progress-divider">
           <van-divider dashed customStyle="border-color: #B2B2B2"></van-divider>
         </view>
-
-        <view class="progress-part" wx:for="{{Language}}" wx:key="item">
+       
+        <view class="progress-part" wx:for="{{English}}" wx:key="item">
           <view class="progress-title">
             <text>{{item.name}}</text>
           </view>
@@ -43,8 +36,8 @@
         </view>
         <view class="progress-divider">
           <van-divider dashed customStyle="border-color: #B2B2B2"></van-divider>
-        </view>
-
+        </view>            
+       
         <view class="progress-part" wx:for="{{Art}}" wx:key="item">
           <view class="progress-title">
             <text>{{item.name}}</text>
@@ -55,12 +48,11 @@
           <view class="progress-goal">
             <text>{{item.goal}}</text>
           </view>
-        </view>        
-
+        </view>
         <view class="progress-divider">
           <van-divider dashed customStyle="border-color: #B2B2B2"></van-divider>
         </view>
-
+       
         <view class="progress-part" wx:for="{{Sport}}" wx:key="item">
           <view class="progress-title">
             <text>{{item.name}}</text>

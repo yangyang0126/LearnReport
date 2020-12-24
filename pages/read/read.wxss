@@ -1,0 +1,26 @@
+.page{
+  background-color: #ffffff;
+}
+
+.title{
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 25px;
+  color: #31778E;
+  padding-top: 10px;
+}
+
+.page-title{
+  display: flex;
+}
+
+.part-img{  
+  margin-left: 25px;
+}
+
+.img{
+  margin-right: 8px;     
+  width: 20%;
+  height: 110px; 
+}
+

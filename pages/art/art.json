@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "van-image": "@vant/weapp/image"
-  }
+    "van-image": "@vant/weapp/image",
+    "van-overlay": "@vant/weapp/overlay"
+  },
+  "enablePullDownRefresh": true
 }

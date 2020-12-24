@@ -1,61 +1,40 @@
-// pages/all/all.js
-
-wx.cloud.init()
-const db = wx.cloud.database(); // 初始化数据库
-
+// pages/year/year.js
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
+
     width:0,
     height:0,
     widthImg:0,
-    heightImg:0, 
+    heightImg:0,
 
-    English:[],
-    Read:[],
-    Art:[],
-    Sport:[],   
+    Code:[
+      {name:"C++",percent:10,text:"0",goal:"播放器"},
+      
+    ],
+    English:[
+      {name:"英语",percent:10,text:"0",goal:"200H"},
+      {name:"日语",percent:10,text:"0",goal:"205课"},
+    ],    
+    Art:[
+      {name:"绘画",percent:10,text:"0",goal:"100张"},
+      {name:"练字",percent:10,text:"0",goal:"150天"},
+      {name:"阅读",percent:10,text:"0",goal:"20本"},   
+    ],
+    Sport:[
+      {name:"跑步",percent:10,text:"0",goal:"200km"},
+      {name:"运动",percent:10,text:"0",goal:"200H"},     
+    ],
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var _this = this;    
-    db.collection('readAll').get({      
-      success: res => {
-        //console.log(res.data)            
-        this.setData({
-          Read: res.data
-        })
-      }
-    })   
-    db.collection('englishAll').get({      
-      success: res => {
-        //console.log(res.data)            
-        this.setData({
-          English: res.data
-        })
-      }
-    })
-    db.collection('artAll').get({      
-      success: res => {
-        //console.log(res.data)            
-        this.setData({
-          Art: res.data
-        })
-      }
-    })
-    db.collection('sportAll').get({      
-      success: res => {
-        //console.log(res.data)            
-        this.setData({
-          Sport: res.data
-        })
-      }
-    })
 
   },
 
@@ -63,6 +42,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     var width = wx.getSystemInfoSync().windowWidth
     var height = wx.getSystemInfoSync().windowHeight
     this.setData({
@@ -73,13 +59,6 @@ Page({
       widthImg:width/3.3,
       heightImg:height/3.3
     }) 
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
 
   },
 

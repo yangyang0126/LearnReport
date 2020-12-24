@@ -4,8 +4,6 @@
     "van-progress": "@vant/weapp/progress",
     "van-divider": "@vant/weapp/divider",
     "van-count-down": "@vant/weapp/count-down",
-    "van-tag": "@vant/weapp/tag",
-    "van-stepper": "@vant/weapp/stepper"
-  },
-  "enablePullDownRefresh": true
+    "van-tag": "@vant/weapp/tag"
+  }
 }

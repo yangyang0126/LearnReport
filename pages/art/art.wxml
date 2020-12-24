@@ -1,12 +1,14 @@
-<swiper style="height:{{height}}px">
+<view class="page">
+  <view class="title">
+    <text>Procreate</text>
+  </view>
+  <!-- <van-image wx:for="{{Img}}" wx:key="item" width="{{widthImg}}" height="{{widthImg}}" fit="cover" src="{{item.link}}"
+    class="img" bind:click="onClickImg" data-id='{{item.id}}' data-url='{{item.link}}' /> -->
+    <image wx:for="{{Img}}" wx:key="item" mode='aspectFill' src="{{item.link}}"
+    class="img" bindtap="onClickImg" data-id='{{item.id}}' data-url='{{item.link}}'></image>
 
-<swiper-item>
-    <scroll-view scroll-y="true" style="width:{{width}}px;height:{{height}}px" class="page">
-      <view class="title">
-        <text>Procreate</text>
-      </view>
-      <van-image wx:for="{{Img}}" wx:key="item" width="{{widthImg}}" height="{{widthImg}}" fit="cover" src="{{item}}"
-        class="img" />
-    </scroll-view>
-  </swiper-item>
-</swiper>
+
+  <view class="text">
+    <text>以上均为临摹作业，非原创</text>
+  </view>
+</view>

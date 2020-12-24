@@ -1,0 +1,47 @@
+/* pages/read2020/read2020.wxss */
+
+.part{
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.imag{
+  margin-left: 25px;
+  
+  width: 25%;
+}
+
+.info{
+  color: #333333;
+  margin-left:15px;
+  font-size:15px;
+  margin-bottom:5px;
+  margin-right:25px; 
+}
+
+.tag{
+  margin-right:10px;
+}
+
+.title{
+  margin-left:15px;
+  color:#31778E;
+  font-weight: bold; 
+  font-size:16px; 
+  margin-bottom:5px;
+  margin-right:25px;
+}
+
+.text{
+  margin-left:25px;
+  margin-right:25px;
+  color: #333333;
+  font-size:14px;
+  
+}
+
+.divider{
+  margin-left:25px;
+  margin-right:25px;
+  margin-bottom:10px;
+}

@@ -1,6 +1,7 @@
-// 初始化数据库
+// pages/read2020/read2020.js
+
 wx.cloud.init()
-const db = wx.cloud.database(); 
+const db = wx.cloud.database(); // 初始化数据库
 
 Page({
 
@@ -8,40 +9,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    width:0,
-    height:0,
-    widthImg:0,
-    heightImg:0,
-    Img:[],
-    imgNum:0, // 图片的初始数量
+    read:[],
+    readNum:0,
   },
-
-  onClickImg: function(event){
-    var imgUrl = event.currentTarget.dataset.url;
-    wx.previewImage({
-      urls: [imgUrl], //需要预览的图片http链接列表，注意是数组
-      current: '', // 当前显示图片的http链接，默认是第一个      
-      })
-    },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {    
-
+  onLoad: function (options) {
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    db.collection('imgArt').limit(18)
-    .orderBy('no', 'desc')
+    var _this = this;   
+    db.collection('read').orderBy('time','desc')
     .get({      
       success: res => {
-        //console.log(res.data)            
+        console.log(res.data)            
         this.setData({
-          Img: res.data
+          read: res.data
         })
       }
     })
@@ -51,16 +40,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var width = wx.getSystemInfoSync().windowWidth
-    var height = wx.getSystemInfoSync().windowHeight
-    this.setData({
-      width:width,
-      height:height
-    }) 
-    this.setData({
-      widthImg:width/3.3,
-      heightImg:height/3.3
-    }) 
 
   },
 
@@ -91,27 +70,25 @@ Page({
    */
   onReachBottom: function () {
     wx.showLoading({
-      title: '画画刷新中',
+      title: '笔记刷新中',
       duration: 1000
     })    
-    let x = this.data.imgNum + 18
-    //console.log(x)
-    let oldImg = this.data.Img
-    db.collection('imgArt').orderBy('no','desc').skip(x) 
+    let x = this.data.readNum + 20
+    let oldRead = this.data.read
+    db.collection('read').orderBy('time','desc').skip(x) 
     // 限制返回数量为 20 条
       .get()
       .then(res => {
       // 利用concat函数连接新数据与旧数据      
         this.setData({
-          Img: oldImg.concat(res.data),
-          imgNum: x
+          read: oldRead.concat(res.data),
+          readNum: x
         })
         //console.log(res.data)
       })
       .catch(err => {
         console.error(err)
       })
-    //console.log('circle 下一页');
 
   },
 
